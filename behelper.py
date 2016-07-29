@@ -36,6 +36,9 @@ def main(wf):
     else:
         keyword = None
 
+    if keyword:
+        keyword = keyword.encode('utf-8')
+
     if not cmd or cmd not in CMD_DICT:
         wf.add_item(title=u'不支持的编码格式，目前只支持(md5,base64)')
     elif cmd and cmd in CMD_DICT:
