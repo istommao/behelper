@@ -21,7 +21,7 @@ def base64_decode(keyword):
 
 
 def len_func(keyword):
-    return len(keyword)
+    return len(unicode(keyword, 'utf-8'))
 
 
 CMD_DICT = {
