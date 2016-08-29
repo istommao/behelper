@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>25500422-95AC-4539-AAF8-864ADC147CEE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2FE6935F-E628-47B4-8B11-AD188ED2E04E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>6E8F3D39-B1F4-4EF2-8B2A-95E62BA542C3</key>
 		<array>
 			<dict>
@@ -123,23 +136,6 @@ python behelper.py md5encode $query
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>362C2EDA-7854-4535-B26E-5ADBBC6CF7A9</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>argumenttype</key>
@@ -179,6 +175,23 @@ python behelper.py bs64encode $query
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>B7C84153-FF3A-4C1C-8DD5-6C7D0A1964C8</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>362C2EDA-7854-4535-B26E-5ADBBC6CF7A9</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -244,6 +257,68 @@ python behelper.py bs64decode $query
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>len</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Calculation ...</string>
+				<key>script</key>
+				<string>query="{query}"
+python behelper.py len $query
+</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Length Calc</string>
+				<key>title</key>
+				<string>Length Calc</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>25500422-95AC-4539-AAF8-864ADC147CEE</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>2FE6935F-E628-47B4-8B11-AD188ED2E04E</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -254,33 +329,47 @@ python behelper.py bs64decode $query
 			<key>xpos</key>
 			<integer>430</integer>
 			<key>ypos</key>
-			<integer>30</integer>
+			<integer>40</integer>
+		</dict>
+		<key>25500422-95AC-4539-AAF8-864ADC147CEE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>130</integer>
+			<key>ypos</key>
+			<integer>500</integer>
+		</dict>
+		<key>2FE6935F-E628-47B4-8B11-AD188ED2E04E</key>
+		<dict>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>500</integer>
 		</dict>
 		<key>362C2EDA-7854-4535-B26E-5ADBBC6CF7A9</key>
 		<dict>
 			<key>xpos</key>
 			<integer>450</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>190</integer>
 		</dict>
 		<key>6E8F3D39-B1F4-4EF2-8B2A-95E62BA542C3</key>
 		<dict>
 			<key>xpos</key>
-			<integer>140</integer>
+			<integer>130</integer>
 			<key>ypos</key>
 			<integer>350</integer>
 		</dict>
 		<key>B7C84153-FF3A-4C1C-8DD5-6C7D0A1964C8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>120</integer>
+			<integer>130</integer>
 			<key>ypos</key>
 			<integer>190</integer>
 		</dict>
 		<key>C81AF416-4B62-4EE5-B272-098E4F2D7ED2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>120</integer>
+			<integer>140</integer>
 			<key>ypos</key>
 			<integer>40</integer>
 		</dict>
@@ -289,7 +378,7 @@ python behelper.py bs64decode $query
 			<key>xpos</key>
 			<integer>460</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>350</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>

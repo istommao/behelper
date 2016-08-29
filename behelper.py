@@ -20,10 +20,15 @@ def base64_decode(keyword):
     return base64.b64decode(keyword)
 
 
+def len_func(keyword):
+    return len(keyword)
+
+
 CMD_DICT = {
     'md5encode': md5_encode,
     'bs64encode': base64_encode,
-    'bs64decode': base64_decode
+    'bs64decode': base64_decode,
+    'len': len_func,
 }
 
 

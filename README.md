@@ -13,3 +13,6 @@
 
 ## base64 decode
 ![base64 decode](images/bs64decode.gif)
+
+## Length calc
+![Length calc](images/lengthcalc.png)
