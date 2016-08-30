@@ -2,6 +2,10 @@
 import sys
 import base64
 import hashlib
+import json
+
+import urllib
+import urllib2
 
 from workflow import Workflow3
 
@@ -24,11 +28,40 @@ def len_func(keyword):
     return len(unicode(keyword, 'utf-8'))
 
 
+def check_idcard(keyword):
+    """Check idcard."""
+    url = 'http://id.8684.cn/ajax.php?act=check'
+
+    headers = {'Content-type': 'application/x-www-form-urlencoded'}
+
+    values = {'userId': keyword}
+    data = urllib.urlencode(values)
+    req = urllib2.Request(url, data, headers)
+
+    response = urllib2.urlopen(req)
+
+    result = response.read()
+    dictdata = json.loads(result)
+
+    if dictdata.get('valid') != u'有':
+        return u'请输入有效的身份证号码!'
+
+    birthday = u'{}-{}-{}'.format(dictdata.get('year'),
+                                  dictdata.get('month'),
+                                  dictdata.get('day'))
+    compstr = u'{place} {sex} {birthday}'.format(
+        place=dictdata.get('place'), sex=dictdata.get('sex'),
+        birthday=birthday)
+
+    return compstr
+
+
 CMD_DICT = {
     'md5encode': md5_encode,
     'bs64encode': base64_encode,
     'bs64decode': base64_decode,
     'len': len_func,
+    'check_idcard': check_idcard,
 }
 
 
