@@ -2,6 +2,10 @@
 
 > behelper is an alfred workflow
 
+## httpcode
+
+> 查询 http状态码
+
 ## ascii
 
 - ascii ord
