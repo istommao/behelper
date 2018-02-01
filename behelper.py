@@ -16,6 +16,20 @@ def md5_encode(keyword):
     return m.hexdigest()
 
 
+def ascii_ord(keyword):
+    try:
+        return ord(keyword)
+    except TypeError:
+        return '请输入单个字符'
+
+
+def ascii_chr(keyword):
+    try:
+        return chr(int(keyword))
+    except (ValueError, TypeError):
+        return '请输入一个整数'
+
+
 def base64_encode(keyword):
     return base64.b64encode(keyword)
 
@@ -62,6 +76,8 @@ CMD_DICT = {
     'bs64decode': base64_decode,
     'len': len_func,
     'check_idcard': check_idcard,
+    'ord': ascii_ord,
+    'chr': ascii_chr
 }
 
 
