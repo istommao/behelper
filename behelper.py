@@ -59,6 +59,10 @@ HTTP_CODES = {
 }
 
 
+def rfc_link(keyword):
+    return 'https://tools.ietf.org/html/rfc{}'.format(keyword)
+
+
 def http_code(keyword):
     return HTTP_CODES.get(keyword, '未找到对应的 HTTP Code')
 
@@ -534,6 +538,7 @@ CMD_DICT = {
     'ord': ascii_ord,
     'chr': ascii_chr,
     'car': car_search,
+    'rfc': rfc_link,
     'httpcode': http_code
 }
 
