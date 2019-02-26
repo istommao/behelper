@@ -6,8 +6,9 @@
 
 ## unicode 转中文
 
-![unicode](images/unicode.jpg)
+> 命令: unicode
 
+![unicode](images/unicode.jpg)
 
 ## RFC link
 
@@ -24,17 +25,29 @@
 
 
 ## md5 encode
-![md5 encode](images/md5encode.png)
+
+> 命令: md5
+
+![md5 encode](images/md5.jpg)
 
 ## base64 encode
-![base64 encode](images/bs64encode.png)
+
+> 命令: b64encode
+
+![base64 encode](images/b64encode.jpg)
 
 
 ## base64 decode
-![base64 decode](images/bs64decode.png)
+
+> 命令: b64decode
+
+![base64 decode](images/b64decode.jpg)
 
 ## Length calc
-![Length calc](images/lengthcalc.png)
+
+> 命令: len
+
+![Length calc](images/len.jpg)
 
 ## Check id card
 ![Check idcard](images/ckidcarad.png)
