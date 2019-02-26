@@ -4,6 +4,10 @@
 
 下载链接: https://github.com/istommao/behelper/raw/master/behelper.alfredworkflow
 
+## unicode 转中文
+
+![unicode](images/unicode.jpg)
+
 
 ## RFC link
 
@@ -34,3 +38,4 @@
 
 ## Check id card
 ![Check idcard](images/ckidcarad.png)
+

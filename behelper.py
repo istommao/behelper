@@ -529,6 +529,11 @@ def car_search(keyword):
     return dataset.get(keyword.upper(), '未知')
 
 
+def unicode_handler(data):
+    result = data.decode('unicode_escape')
+    return result
+
+
 CMD_DICT = {
     'md5encode': md5_encode,
     'bs64encode': base64_encode,
@@ -539,18 +544,21 @@ CMD_DICT = {
     'chr': ascii_chr,
     'car': car_search,
     'rfc': rfc_link,
-    'httpcode': http_code
+    'httpcode': http_code,
+    'unicode': unicode_handler
 }
 
 
 def main(wf):
     cmd = None
+
     if len(wf.args) == 2:
         cmd, keyword = wf.args
     elif len(wf.args) == 1:
         keyword = wf.args[0]
     else:
-        keyword = None
+        keyword = ''.join(wf.args[1:])
+        cmd = wf.args[0]
 
     if keyword:
         keyword = keyword.encode('utf-8')
