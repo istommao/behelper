@@ -534,6 +534,35 @@ def unicode_handler(data):
     return result
 
 
+def get_random_string(length,
+                      allowed_chars='abcdefghijklmnopqrstuvwxyz'
+                                    'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'):
+    import random
+    length = int(length)
+    return ''.join(random.choice(allowed_chars) for i in range(length))
+
+
+def behelp_handler(*arg):
+    results = [
+        'unicode 将字符串中的unicode转为中文',
+        'md5 md5加密',
+        'b64encode base64 编码',
+        'b64decode base64 解码',
+        'randstr 生成随机字符串',
+        'len 计算字符串长度',
+    ]
+
+    return results
+
+
+def json_format(data):
+    data = data.replace("'", '"')
+
+    data = json.loads(data)
+
+    return json.dumps(data, indent=4, ensure_ascii=False, separators=(',', ': '))
+
+
 CMD_DICT = {
     'md5encode': md5_encode,
     'bs64encode': base64_encode,
@@ -545,7 +574,10 @@ CMD_DICT = {
     'car': car_search,
     'rfc': rfc_link,
     'httpcode': http_code,
-    'unicode': unicode_handler
+    'unicode': unicode_handler,
+    'randstr': get_random_string,
+    'behelp': behelp_handler,
+    'jsonformat': json_format
 }
 
 
@@ -568,14 +600,22 @@ def main(wf):
     elif cmd and cmd in CMD_DICT:
         func = CMD_DICT[cmd]
         try:
-            result = func(keyword)
+            retdata = func(keyword)
         except TypeError:
             wf.add_item(title=u'编码错误，请检查您输入的参数是否正确!')
         else:
-            wf.add_item(title='{}: {}'.format(cmd, keyword), subtitle=result,
-                        arg=result, valid=True)
+            show_data(cmd, keyword, retdata)
 
     wf.send_feedback()
+
+
+def show_data(cmd, keyword, retdata):
+    if not isinstance(retdata, list):
+        retdata = [retdata]
+
+    for result in retdata:
+        wf.add_item(title='{}: {}'.format(cmd, keyword), subtitle=result,
+                    arg=result, valid=True)
 
 
 if __name__ == '__main__':

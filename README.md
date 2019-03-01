@@ -4,6 +4,13 @@
 
 下载链接: https://github.com/istommao/behelper/raw/master/behelper.alfredworkflow
 
+## json 格式化
+
+> jsonf
+
+![jsonf](images/jsonf.gif)
+
+
 ## unicode 转中文
 
 > 命令: unicode
@@ -50,5 +57,4 @@
 ![Length calc](images/len.jpg)
 
 ## Check id card
-![Check idcard](images/ckidcarad.png)
 
