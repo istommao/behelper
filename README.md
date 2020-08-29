@@ -4,6 +4,10 @@
 
 下载链接: https://github.com/istommao/behelper/raw/master/behelper.alfredworkflow
 
+## timestamp
+
+> timestamp now
+
 ## json 格式化
 
 > jsonf

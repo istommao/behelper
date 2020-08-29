@@ -3,6 +3,7 @@ import sys
 import base64
 import hashlib
 import json
+import time
 
 import urllib
 import urllib2
@@ -563,6 +564,14 @@ def json_format(data):
     return json.dumps(data, indent=4, ensure_ascii=False, separators=(',', ': '))
 
 
+def timestamp_handler(data):
+    now = time.time()
+    if data == 'now':
+        return int(now)
+    else:
+        return int(now)
+
+
 CMD_DICT = {
     'md5encode': md5_encode,
     'bs64encode': base64_encode,
@@ -577,7 +586,8 @@ CMD_DICT = {
     'unicode': unicode_handler,
     'randstr': get_random_string,
     'behelp': behelp_handler,
-    'jsonformat': json_format
+    'jsonformat': json_format,
+    'timestamp': timestamp_handler
 }
 
 
